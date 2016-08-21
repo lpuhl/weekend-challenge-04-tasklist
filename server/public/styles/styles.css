@@ -1,0 +1,37 @@
+html, body, h1, h2, h3, h4, ul, ol, li, p, a {
+  padding: 0;
+   border: 0;
+   margin: 0;
+   font-size: 100%;
+   font: inherit;
+}
+
+
+
+button {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.container {
+  background-color: #eeffcc;
+  margin: 100px auto 100px;
+  width: 800px;
+  padding: 18px;
+  border-radius: 24px;
+}
+
+.complete {
+  color: lightgray;
+}
