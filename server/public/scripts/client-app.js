@@ -11,7 +11,6 @@ $(document).ready(function () {
 function completeTask() {
   console.log('this.parent', $(this).parent());
   var task = {};
-  var inputs = $(this).parent().children().serializeArray();
   var taskId = $(this).parent().data('taskID');
   console.log('tasks we are updating', task);
   $(this).parent().toggleClass('complete');
