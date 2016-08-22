@@ -3,29 +3,26 @@ $(document).ready(function () {
 
   $('#task-submit').on('click', postTask);
   $('#task-list').on('click', '.update', updateTask);
-  $('#task-list').on('click', '.completeButton', completeTask);
+  $('#task-list').on('click', '.done', completeTask);
   $('#task-list').on('click', '.delete', deleteTask);
 });
 
 
 function completeTask() {
-  // $(this).parent().toggleClass('complete');
-  // console.log('this.parent', $(this).parent());
+  console.log('this.parent', $(this).parent());
   var task = {};
   var inputs = $(this).parent().children().serializeArray();
-  $.each(inputs, function (i, field) {
-    task[field.name] = field.value;
-  });
   var taskId = $(this).parent().data('taskID');
   console.log('tasks we are updating', task);
+  $(this).parent().toggleClass('complete');
+
   $.ajax({
     type: 'PUT',
     url: '/tasklist/complete/' + taskId,
     data: task,
     success: function () {
       console.log('success!');
-      $('#task-list').empty();
-      getTasks();
+      // getTasks();
     },
     error: function () {
       console.log('Error PUT /tasklist/' + taskId);
@@ -56,13 +53,10 @@ function getTasks() {
        if (task.completed == true) {
          $el.addClass('complete');
          console.log($(this));
-         $el.append('<button class ="update">Update</button>');
-         $el.append('<button class ="completeButton">Oops, not done!</button>');
-       } else {
-         $el.append('<button class ="update">Update</button>');
-         $el.append('<button class ="completeButton">Done!</button>');
        }
-       $el.append('<button class ="delete">Delete</button>');
+       $el.append('<button class ="update">Update</button>');
+       $el.append('<input type="checkbox" class ="done">Done</button>');
+       $el.append('<button class ="delete">Delete</button>');
        $('#task-list').append($el);
      });
    },
@@ -118,7 +112,6 @@ function updateTask() {
     },
   });
 };
-
 
 function deleteTask() {
   var taskId = $(this).parent().data('taskID');

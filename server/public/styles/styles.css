@@ -6,32 +6,101 @@ html, body, h1, h2, h3, h4, ul, ol, li, p, a {
    font: inherit;
 }
 
-
-
-button {
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.42857143;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  cursor: pointer;
-  user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
+@font-face  {
+  font-family: 'SourceSansPro-Regular';
+  src: url('SourceSansPro-Regular.otf');
+  font-style: normal;
+  font-weight: normal;
 }
+
+@font-face  {
+  font-family: 'SourceSansPro-Regular';
+  src: url('SourceSansPro-Semibold.otf');
+  font-style: normal;
+  font-weight: bold;;
+}
+
+
+body {
+  font-family: 'SourceSansPro-Regular', Geneva, Tahoma, sans-serif;
+  background-color: #d4d4d4;
+}
+
 .container {
   background-color: #eeffcc;
   margin: 100px auto 100px;
   width: 800px;
-  padding: 18px;
+  padding: 60px;
   border-radius: 24px;
 }
 
+.addTask, .listFromDB {
+  margin-top: 30px;
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: bold;
+  color: #666666;
+}
+
+h2 {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.form-group {
+  background-color: lightgreen;
+}
+
+.form-group, .taskRow {
+  margin: 10px;
+  padding: 10px;
+  line-height: 2em;
+  vertical-align: middle;
+  /*margin-bottom: 0;*/
+}
+
+label, input {
+  font-size: 1.3em;
+}
+
+input[type=text] {
+    width: 25em;
+    padding: .5em;
+}
+
+:checked {
+}
+
+button {
+  display: inline-block;
+  /*padding: 6px 12px;*/
+  margin-left: 6px;
+  font-size: 1em;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  /*vertical-align: middle;*/
+  cursor: pointer;
+  /*user-select: none;*/
+  background-color: white;
+  border: 0.5px solid lightgray;
+  border-radius: 4px;
+}
+
 .complete {
-  color: lightgray;
+  background-color: lightgray;
+  color: darkgray;
+}
+
+.complete button {
+  color:inherit;
+}
+.complete input {
+  color:inherit;
+}
+
+.complete [type="checkbox"] {
+  input:checked;
 }

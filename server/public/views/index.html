@@ -1,34 +1,41 @@
 <!doctype html>
 <html>
-  <head>
+
+<head>
     <title>Stuff To Do</title>
     <script src="/vendor/jquery-3.1.0.min.js"></script>
     <script src="/scripts/client-app.js"></script>
     <!-- <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet"> -->
-    <link rel="stylesheet" href="/vendor/bootstrap.min.css" />
-    <link rel="stylesheet" href="styles/styles.css"  />
-  </head>
-  <body>
+    <!-- <link rel="stylesheet" href="/vendor/bootstrap.min.css" /> -->
+    <link rel="stylesheet" href="styles/styles.css" />
+</head>
+
+<body>
     <main class="container">
-      <header>
-        <h1>Stuff To Do</h1>
-      </header>
-      <h2>Add a New Task</h2>
-      <form id="task-form">
-        <div class="form-group">
-          <label for="description">Task</label>
-          <input type="text" id="description" name="description" class="form-control" />
-        </div>
+        <header>
+            <h1>Stuff To Do</h1>
+        </header>
+        <section class="addTask">
+            <h2>Add a New Task</h2>
+            <form id="task-form">
+                <div class="form-group">
+                  
+                    <label for="description">Task</label>
+                    <input type="text" id="description" name="description" class="form-control" />
 
-        <button id="task-submit" class="btn btn-default">Add to List</button>
+                    <button id="task-submit" class="form-control">Add to List</button>
+                </div>
 
-      </form>
 
-      <h2>The Docket</h2>
-      <ul id="task-list">
-
-      </ul>
+            </form>
+        </section>
+        <section class="listFromDB">
+          <h2>The Docket</h2>
+          <ul id="task-list">
+          </ul>
+        </section>
     </main>
 
-  </body>
+</body>
+
 </html>
